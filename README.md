@@ -1,66 +1,33 @@
-## Foundry
+Overview
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project implements a blockchain-based healthcare data exchange system using modular smart contracts. It enables secure sharing, storage, and governance of medical records through role-based access control and tokenized incentives.
 
-Foundry consists of:
+The Decentralized Healthcare Data Exchange is a platform that empowers patients with ownership and control over their medical records while enabling secure, transparent data sharing between healthcare providers, insurers, and researchers. Built on blockchain technology, the platform ensures privacy, accuracy, and accessibility through cryptographic permissions and decentralized storage. Tokenized incentives encourage patients to share anonymized data with researchers, fostering medical advancements while safeguarding personal information.
+This platform is designed for patients, healthcare providers, insurers, and researchers, fostering trust and collaboration in the healthcare ecosystem.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Key Features:
+- **Decentralized Data Management**: Store medical records on IPFS with encrypted access.
+- **Role-Based Access Control**: Manage access permissions for patients, doctors, researchers, and insurers.
+- **Tokenized Incentives**: Reward data-sharing participants using an ERC20 token.
+- **Platform Governance**: Enable stakeholders to propose and vote on system updates.
+- **Emergency Access**: Time-limited permissions for urgent situations.
 
-## Documentation
 
-https://book.getfoundry.sh/
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+healthcare_exchange/
+├── src/
+│   ├── core/
+│   │   ├── HealthcareHub.sol        # Main contract orchestrating all operations
+│   │   ├── DataRegistry.sol         # Manages medical record references and permissions
+│   │   └── AccessControl.sol        # Handles role-based access control
+│   ├── data/
+│   │   ├── MedicalRecord.sol        # Medical record structure and operations
+│   │   └── DataEncryption.sol       # Handles encryption/decryption logic
+│   ├── tokens/
+│   │   ├── MediToken.sol            # Platform utility token (ERC20)
+│   │   └── RewardsEngine.sol        # Manages incentives and rewards
+│   └── governance/
+│       ├── HealthcareDAO.sol        # Handles platform governance
+│       └── EmergencyAccess.sol      # Emergency access controls
+├── test/
+└── script/
