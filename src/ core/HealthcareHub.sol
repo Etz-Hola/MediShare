@@ -4,7 +4,6 @@ pragma solidity ^0.8.19;
 import "lib/openzeppelin-contracts/contracts/access/AccessControl.sol";
 import "lib/openzeppelin-contracts/contracts/security/Pausable.sol";
 import "lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol";
-import "lib/";
 import "../interfaces/IDataRegistry.sol";
 import "../interfaces/IMediToken.sol";
 import "../interfaces/IRewardsEngine.sol";
